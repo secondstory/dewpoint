@@ -1,0 +1,36 @@
+Dewpoint is a command line tool for interacting with cloud servers.
+
+Usage: dewpoint [options] <command> ...
+
+Commands:
+  create-node <nodename>   Create a new node
+  destroy-node <nodename>  Destroy an existing node
+  find-node <nodename>     Find an existing node by name
+  list-nodes               List all existing nodes
+  list-sizes               List all valid server sizes
+  list-images              List all available server images
+  help <command>           Return more detailed help on command
+
+Dewpoint is a wrapper for the excellent libcloud library.  A
+compatible version (0.3.1) is packaged with dewpoint.
+
+Configuration files for dewpoint by default can be stored in
+~/.dewpoint/dewpoint.ini.  They are in standard ini format and look
+like this:
+
+-----
+
+[default]
+provider: rackspace
+
+[rackspace]
+user: YOUR USER
+key: YOUR API KEY
+default_size: 256
+default_image: Ubuntu 10.04 LTS (lucid)
+
+-----
+
+Please note that this tool has so far only been tested against
+RackSpace Cloud, although the interface should be capable of supporting
+other libcloud providers without too much additional work.
